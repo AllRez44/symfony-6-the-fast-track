@@ -13,10 +13,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(80vh);
+        height: calc(80vh - 4.5rem);
+    }
+    .greeting {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 1.5rem;
     }
 </style>
-
+{% if (name) %} 
+    <div class="greeting">
+        <h1> Hello, {{ name }}!</h1>
+        <h2>Welcome to the Guestbook!</h2>
+    </div>
+{% endif %}
 <div class="image-wrapper">
     <img src="/images/under-construction.gif" />
 </div>
