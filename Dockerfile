@@ -18,6 +18,6 @@ RUN apt-get install -y \
 
 RUN   docker-php-ext-install zip gettext opcache
 
-RUN install-php-extensions xdebug redis
+RUN install-php-extensions xdebug redis pdo_pgsql
 
 EXPOSE 80 8000 443
