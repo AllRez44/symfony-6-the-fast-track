@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block body %}
+<style>
+    body {
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+    }
+    .image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(80vh);
+    }
+</style>
+
+<div class="image-wrapper">
+    <img src="/images/under-construction.gif" />
+</div>
+{% endblock %}

@@ -8,10 +8,10 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ConferenceController extends AbstractController
 {
-    #[Route('/conference', name: 'app_conference')]
+    #[Route('/', name: 'homepage')]
     public function index(): Response
     {
-        return $this->render('conference/index.html.twig', [
+        return $this->render('/index.html.twig', [
             'controller_name' => 'ConferenceController',
         ]);
     }
