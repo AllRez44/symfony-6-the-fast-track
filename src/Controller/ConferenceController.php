@@ -13,6 +13,9 @@ class ConferenceController extends AbstractController
     public function index(Request $request): Response
     {
         $name = ucfirst(htmlspecialchars($request->query->get('hello','')));
+        dump($name);
+        dump($request);
+    
         return $this->render('/index.html.twig', [
             'name' => $name,
             'controller_name' => 'ConferenceController',
