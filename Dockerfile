@@ -16,9 +16,7 @@ RUN apt-get install -y \
     unzip \
     libzip-dev
 
-RUN   docker-php-ext-install zip
-
-RUN   docker-php-ext-install gettext
+RUN   docker-php-ext-install zip gettext opcache
 
 RUN install-php-extensions xdebug redis
 

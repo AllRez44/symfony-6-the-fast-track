@@ -1,6 +1,20 @@
 version: '3'
 
 services:
+  app:
+    working_dir: /opt/guestbook
+    entrypoint: ["symfony", "server:start", "--no-tls", ]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+      - "443:443"
+    volumes:
+      - ./:/opt/guestbook
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
 ###> doctrine/doctrine-bundle ###
   database:
     image: postgres:${POSTGRES_VERSION:-16}-alpine
