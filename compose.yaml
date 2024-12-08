@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     working_dir: /opt/guestbook
-    entrypoint: ["symfony", "server:start", "--no-tls", ]
+    entrypoint: ["symfony", "server:start", "--port", "8000" ,"--no-tls", "--allow-all-ip" ]
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
       - "8000:8000"
       - "443:443"
     volumes:
-      - ./:/opt/guestbook
+      - ./:/opt/guestbook:Z
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
